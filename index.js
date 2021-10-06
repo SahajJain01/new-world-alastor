@@ -75,4 +75,4 @@ setInterval(function(){
     }).on('error', function (e) {
         console.log("Error fetching json: ", e);
     });
- }, 60000);
+ }, 300000);
