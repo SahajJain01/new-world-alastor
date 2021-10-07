@@ -12,7 +12,7 @@ client.on('ready', () => {
 });
 client.login('ODEyMjI0MjU0OTIxNDA4NTI1.YC9oyA.o5TMzTeEoNTMDt7oLn5LlRR3gFI');
 
-setInterval(fetchDataAndUpdateTopic, 600000);
+setInterval(fetchDataAndUpdateTopic, 300000);
 
 function fetchDataAndUpdateTopic() {
     https.get(url, function (res) {
