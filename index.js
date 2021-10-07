@@ -25,25 +25,31 @@ function fetchDataAndUpdateTopic() {
             data.data.servers.forEach(e => {
                 if (e.worldName == worldName) {
                     var st;
+                    var str = '';
                     switch (e.status) {
                         case 12:
-                            st = 'Maintenance'
+                            st = 'Maintenance';
+                            str += ':yellow_circle: ';
                             break;
                         case 8:
-                            st = 'Online/Full'
+                            st = 'Online (New Char Disabled)';
+                            str += ':green_circle: ';
                             break;
                         case 4:
-                            st = 'Online'
+                            st = 'Down';
+                            str += ':red_circle: ';
                             break;
                         case 0:
-                            st = 'Offline'
+                            st = 'Online';
+                            str += ':green_circle: ';
                             break;
                         default:
-                            st = 'Unknown'
+                            st = 'Unknown';
+                            str += ':x: '
                             break;
                     }
                     var t = new Date(e.queueTime * 1000).toISOString().substr(11, 8);
-                    var str = e.worldName + ' - ' + (e.connectionCount + e.queueCount) + '/' + e.connectionCountMax + ' | Wait: ' + t + ' | Status: ' + st + ' | StatusCode: ' + e.status + ' | Last update: ' + new Date(Date.now()).toLocaleString("en-IN", { timeZone: 'Asia/Kolkata' });
+                    str += e.worldName + ' - ' + (e.connectionCount + e.queueCount) + '/' + e.connectionCountMax + ' | Wait: ' + t + ' | Status: ' + st + ' | StatusCode: ' + e.status + ' | Last update: ' + new Date(Date.now()).toLocaleString("en-IN", { timeZone: 'Asia/Kolkata' });
                     console.log('Sending update to discord: ' + str);
                     client.channels.cache.get('864708503058251796').setTopic(str)
                         .then(newChannel => console.log(`Channel's new topic is ${newChannel.topic}`))
