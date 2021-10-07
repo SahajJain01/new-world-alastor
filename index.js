@@ -55,11 +55,11 @@ function fetchDataAndUpdateTopic() {
                     client.channels.cache.get('864708503058251796').setTopic(str)
                         .then(newChannel => console.log(`Channel's new topic is ${newChannel.topic}`))
                         .catch(console.error);
-                    if(e.connectionCount >= 1900 && !fullFlag) {
+                    if(e.connectionCount >= 1950 && !fullFlag) {
                         client.channels.cache.get('864708503058251796').send('Alert! ' + e.worldName + ' is about to be full, join now if you wanna avoid queue!');
                         fullFlag = true;
                     }
-                    if(e.connectionCount <= 1500 && fullFlag) {
+                    if(e.connectionCount <= 1750 && fullFlag) {
                         fullFlag = false;
                     }
                 }
