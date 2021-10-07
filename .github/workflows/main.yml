@@ -2,8 +2,8 @@ name: remote ssh command
 on: [push]
 jobs:
 
-  build:
-    name: Build
+  deploy:
+    name: Deploy
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands using ssh key
@@ -17,4 +17,4 @@ jobs:
           cd ~/new-world-alastor
           git pull
           PM2_HOME=/home/ubuntu/.pm2
-          pm2 restart 0
+          /home/ubuntu/.nvm/versions/node/v16.10.0/bin/pm2 restart 0
