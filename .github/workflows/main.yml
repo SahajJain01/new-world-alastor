@@ -16,4 +16,4 @@ jobs:
         script: |
           cd ~/new-world-alastor
           git pull
-          pm2 restart 0
+          /home/ubuntu/.nvm/versions/node/v16.10.0/bin/pm2 restart 0
