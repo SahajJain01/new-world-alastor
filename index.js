@@ -13,7 +13,7 @@ client.on('ready', () => {
 });
 client.login('ODEyMjI0MjU0OTIxNDA4NTI1.YC9oyA.o5TMzTeEoNTMDt7oLn5LlRR3gFI');
 
-setInterval(fetchDataAndUpdateTopic, 3000);
+setInterval(fetchDataAndUpdateTopic, 300000);
 
 function fetchDataAndUpdateTopic() {
     https.get(url, function (res) {
@@ -33,8 +33,8 @@ function fetchDataAndUpdateTopic() {
                             str += ':yellow_circle: ';
                             break;
                         case 12:
-                            st = 'Online (New Char Disabled)';
-                            str += ':green_circle: ';
+                            st = 'Maintenance (New Char Disabled)';
+                            str += ':yellow_circle: ';
                             break;
                         case 8:
                             st = 'Down';
