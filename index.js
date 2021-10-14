@@ -28,17 +28,17 @@ function fetchDataAndUpdateTopic() {
                     var st;
                     var str = '';
                     switch (e[7]) {
-                        case 4:
-                            st = 'Maintenance';
-                            str += ':yellow_circle: ';
-                            break;
                         case 12:
                             st = 'Maintenance (New Char Disabled)';
                             str += ':yellow_circle: ';
                             break;
                         case 8:
-                            st = 'Down';
-                            str += ':red_circle: ';
+                            st = 'Online (New Char Disabled)';
+                            str += ':green_circle: ';
+                            break;
+                        case 4:
+                            st = 'Maintenance';
+                            str += ':yellow_circle: ';
                             break;
                         case 0:
                             st = 'Online';
