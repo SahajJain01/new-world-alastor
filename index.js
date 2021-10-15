@@ -45,8 +45,8 @@ function fetchDataAndUpdateTopic() {
                             str += ':green_circle: ';
                             break;
                         default:
-                            st = 'Unknown';
-                            str += ':x: '
+                            st = 'Unknown/Down';
+                            str += ':red_circle: ';
                             break;
                     }
                     var t = new Date(e[3] * 1000).toISOString().substr(11, 8);
