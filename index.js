@@ -37,10 +37,6 @@ function fetchDataAndUpdateTopic() {
                                 client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
                                 maintenanceFlag = true;
                             }
-                            if(!downFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
-                                downFlag = true;
-                            }
                             break;
                         case 8:
                             st = 'Online (New Char Disabled)';
@@ -61,10 +57,6 @@ function fetchDataAndUpdateTopic() {
                                 client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
                                 maintenanceFlag = true;
                             }
-                            if(!downFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
-                                downFlag = true;
-                            }
                             break;
                         case 0:
                             st = 'Online';
@@ -81,6 +73,10 @@ function fetchDataAndUpdateTopic() {
                         default:
                             st = 'Unknown/Down';
                             str += ':red_circle: ';
+                            if(!downFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
+                                downFlag = true;
+                            }
                             break;
                     }
                     var t = new Date(e[3] * 1000).toISOString().substr(11, 8);
