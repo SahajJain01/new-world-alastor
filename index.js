@@ -34,7 +34,7 @@ function fetchDataAndUpdateTopic() {
                             st = 'Maintenance (New Char Disabled)';
                             str += ':yellow_circle: ';
                             if(!maintenanceFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
                                 maintenanceFlag = true;
                             }
                             break;
@@ -42,11 +42,11 @@ function fetchDataAndUpdateTopic() {
                             st = 'Online (New Char Disabled)';
                             str += ':green_circle: ';
                             if(maintenanceFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
                                 maintenanceFlag = false;
                             }
                             if(downFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is back online! Let the grind resume.');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is back online! Let the grind resume.');
                                 downFlag = false;
                             }
                             break;
@@ -54,7 +54,7 @@ function fetchDataAndUpdateTopic() {
                             st = 'Maintenance';
                             str += ':yellow_circle: ';
                             if(!maintenanceFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
                                 maintenanceFlag = true;
                             }
                             break;
@@ -62,11 +62,11 @@ function fetchDataAndUpdateTopic() {
                             st = 'Online';
                             str += ':green_circle: ';
                             if(maintenanceFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
                                 maintenanceFlag = false;
                             }
                             if(downFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is back online! Let the grind resume.');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is back online! Let the grind resume.');
                                 downFlag = false;
                             }
                             break;
@@ -74,7 +74,7 @@ function fetchDataAndUpdateTopic() {
                             st = 'Unknown/Down';
                             str += ':red_circle: ';
                             if(!downFlag) {
-                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
+                                client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
                                 downFlag = true;
                             }
                             break;
@@ -86,7 +86,7 @@ function fetchDataAndUpdateTopic() {
                         .then(newChannel => console.log(`Channel's new topic is ${newChannel.topic}`))
                         .catch(console.error);
                     if(e[1] >= 1950 && !fullFlag) {
-                        client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is about to be full, join now if you wanna avoid queue!');
+                        client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is about to be full, join now if you wanna avoid queue!');
                         fullFlag = true;
                     }
                     if(e[1] <= 1750 && fullFlag) {
