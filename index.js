@@ -7,6 +7,8 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 var url = 'https://nwdb.info/server-status/servers.json';
 var worldName = 'Alastor';
 var fullFlag = false;
+var maintenanceFlag = false;
+var downFlag = false;
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -31,18 +33,50 @@ function fetchDataAndUpdateTopic() {
                         case 12:
                             st = 'Maintenance (New Char Disabled)';
                             str += ':yellow_circle: ';
+                            if(!maintenanceFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
+                                maintenanceFlag = true;
+                            }
+                            if(!downFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
+                                downFlag = true;
+                            }
                             break;
                         case 8:
                             st = 'Online (New Char Disabled)';
                             str += ':green_circle: ';
+                            if(maintenanceFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
+                                maintenanceFlag = false;
+                            }
+                            if(downFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is back online! Let the grind resume.');
+                                downFlag = false;
+                            }
                             break;
                         case 4:
                             st = 'Maintenance';
                             str += ':yellow_circle: ';
+                            if(!maintenanceFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
+                                maintenanceFlag = true;
+                            }
+                            if(!downFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is down for unknown reason, time to reconsider your life decisions!');
+                                downFlag = true;
+                            }
                             break;
                         case 0:
                             st = 'Online';
                             str += ':green_circle: ';
+                            if(maintenanceFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
+                                maintenanceFlag = false;
+                            }
+                            if(downFlag) {
+                                client.channels.cache.get('864708503058251796').send('Alert! ' + e[4] + ' is back online! Let the grind resume.');
+                                downFlag = false;
+                            }
                             break;
                         default:
                             st = 'Unknown/Down';
