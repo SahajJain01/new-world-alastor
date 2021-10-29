@@ -5,7 +5,7 @@ const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 var url = 'https://nwdb.info/server-status/servers.json';
-var worldName = 'Alastor';
+var worldName = 'Murias';
 var fullFlag = false;
 var maintenanceFlag = false;
 var downFlag = false;
@@ -15,7 +15,7 @@ client.on('ready', () => {
 });
 client.login('ODEyMjI0MjU0OTIxNDA4NTI1.YC9oyA.o5TMzTeEoNTMDt7oLn5LlRR3gFI');
 
-setInterval(fetchDataAndUpdateTopic, 300000);
+setInterval(fetchDataAndUpdateTopic, 120000);
 
 function fetchDataAndUpdateTopic() {
     https.get(url, function (res) {
