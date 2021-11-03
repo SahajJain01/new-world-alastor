@@ -15,13 +15,14 @@ client.on('ready', () => {
 });
 client.login('ODEyMjI0MjU0OTIxNDA4NTI1.YC9oyA.o5TMzTeEoNTMDt7oLn5LlRR3gFI');
 
+fetchDataAndUpdateTopic();
 setInterval(fetchDataAndUpdateTopic, 300000);
 
 function fetchDataAndUpdateTopic() {
     humanoid.get(url)
         .then(res => {
             if (res.statusCode == 200) {
-                data.data.servers.forEach(e => {
+                res.body.data.servers.forEach(e => {
                     if (e[4] == worldName) {
                         var st;
                         var str = '';
