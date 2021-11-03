@@ -21,7 +21,6 @@ function fetchDataAndUpdateTopic() {
     humanoid.get(url)
         .then(res => {
             if (res.statusCode == 200) {
-                var body = '';
                 data.data.servers.forEach(e => {
                     if (e[4] == worldName) {
                         var st;
