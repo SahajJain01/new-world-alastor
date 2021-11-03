@@ -12,10 +12,10 @@ let humanoid = new Humanoid();
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    fetchDataAndUpdateTopic();
 });
 client.login('ODEyMjI0MjU0OTIxNDA4NTI1.YC9oyA.o5TMzTeEoNTMDt7oLn5LlRR3gFI');
 
-fetchDataAndUpdateTopic();
 setInterval(fetchDataAndUpdateTopic, 300000);
 
 function fetchDataAndUpdateTopic() {
