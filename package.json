@@ -18,6 +18,8 @@
   "homepage": "https://github.com/SpawnHouse/new-world-alastor#readme",
   "dependencies": {
     "discord.js": "^13.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "humanoid-js": "^1.0.1",
+    "request": "^2.88.2"
   }
 }
