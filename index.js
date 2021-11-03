@@ -22,7 +22,7 @@ function fetchDataAndUpdateTopic() {
     humanoid.get(url)
         .then(res => {
             if (res.statusCode == 200) {
-                res.body.data.servers.forEach(e => {
+                JSON.parse(res.body).data.servers.forEach(e => {
                     if (e[4] == worldName) {
                         var st;
                         var str = '';
