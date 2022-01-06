@@ -27,6 +27,18 @@ function fetchDataAndUpdateTopic() {
                         var st;
                         var str = '';
                         switch (e[7]) {
+                            case 16:
+                                st = 'Online (Char transfer Disabled)';
+                                str += ':green_circle: ';
+                                if (maintenanceFlag) {
+                                    client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' maintenance completed, server is online! Did you do anything productive?');
+                                    maintenanceFlag = false;
+                                }
+                                if (downFlag) {
+                                    client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is back online! Let the grind resume.');
+                                    downFlag = false;
+                                }
+                                break;
                             case 12:
                                 st = 'Maintenance (New Char Disabled)';
                                 str += ':yellow_circle: ';
