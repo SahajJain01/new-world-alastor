@@ -27,6 +27,14 @@ function fetchDataAndUpdateTopic() {
                         var st;
                         var str = '';
                         switch (e[7]) {
+                            case 20:
+                                st = 'Maintenance (Char transfer Disabled)';
+                                str += ':yellow_circle: ';
+                                if (!maintenanceFlag) {
+                                    client.channels.cache.get('864708503058251796').send('<@&900293466444140574> Alert! ' + e[4] + ' is down for maintenance, time to go back to being productive!');
+                                    maintenanceFlag = true;
+                                }
+                                break;
                             case 16:
                                 st = 'Online (Char transfer Disabled)';
                                 str += ':green_circle: ';
